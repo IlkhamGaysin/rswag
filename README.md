@@ -192,8 +192,14 @@ Take special note of the __run_test!__ method that's called within each response
 If you want to add metadata to the example, you can pass keyword arguments to the __run_test!__ method:
 
 ```ruby
+# to run particular test case
 response '201', 'blog created' do
   run_test! focus: true
+end
+
+# to write vcr cassette
+response '201', 'blog created' do
+  run_test! vcr: true
 end
 ```
 
